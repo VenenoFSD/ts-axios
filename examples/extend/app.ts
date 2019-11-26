@@ -38,7 +38,12 @@ axios('/extend/post', {
   }
 })
 
-//
+/**
+ * 此处定义了返回数据的类型接口 ResponseData 和 User
+ * 然后将接口传入 axios 函数
+ * 这样 ts 就可以推断出返回的数据的类型
+ * test 函数就可以直接打印 user.result.name
+ */
 interface ResponseData<T=any> {
   code: number
   result: T
